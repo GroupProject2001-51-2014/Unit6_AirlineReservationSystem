@@ -60,6 +60,7 @@ public class AirlineFrame extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         resetButton = new javax.swing.JButton();
         airplaneFrame = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -266,6 +267,22 @@ public class AirlineFrame extends javax.swing.JFrame {
         getContentPane().add(airplaneFrame);
         airplaneFrame.setBounds(0, 90, 680, 560);
 
+        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 680, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 660, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 680, 660);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -368,6 +385,7 @@ public class AirlineFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
