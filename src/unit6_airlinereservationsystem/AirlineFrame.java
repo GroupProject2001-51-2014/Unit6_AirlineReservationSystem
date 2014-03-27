@@ -28,7 +28,6 @@ public class AirlineFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
         seat1 = new javax.swing.JCheckBox();
         seat2 = new javax.swing.JCheckBox();
         seat3 = new javax.swing.JCheckBox();
@@ -39,9 +38,13 @@ public class AirlineFrame extends javax.swing.JFrame {
         seat8 = new javax.swing.JCheckBox();
         seat9 = new javax.swing.JCheckBox();
         seat10 = new javax.swing.JCheckBox();
+        seat11 = new javax.swing.JCheckBox();
+        seat12 = new javax.swing.JCheckBox();
+        seat13 = new javax.swing.JCheckBox();
+        seat14 = new javax.swing.JCheckBox();
+        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -49,6 +52,10 @@ public class AirlineFrame extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         economyRadioButton = new javax.swing.JRadioButton();
         firtclassRadioButton = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
@@ -56,21 +63,17 @@ public class AirlineFrame extends javax.swing.JFrame {
         seatCount2 = new javax.swing.JLabel();
         seatComment = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
         resetButton = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         airplaneFrame = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
         setBackground(new java.awt.Color(153, 255, 255));
         setForeground(java.awt.Color.black);
         getContentPane().setLayout(null);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(260, 310, 54, 60);
 
         seat1.setText("1");
         seat1.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +82,7 @@ public class AirlineFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(seat1);
-        seat1.setBounds(300, 160, 40, 40);
+        seat1.setBounds(250, 110, 40, 40);
 
         seat2.setText("2");
         seat2.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +91,7 @@ public class AirlineFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(seat2);
-        seat2.setBounds(290, 230, 40, 40);
+        seat2.setBounds(340, 110, 40, 40);
 
         seat3.setText("3");
         seat3.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +100,7 @@ public class AirlineFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(seat3);
-        seat3.setBounds(360, 230, 40, 40);
+        seat3.setBounds(250, 180, 40, 40);
 
         seat4.setText("4");
         seat4.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +109,7 @@ public class AirlineFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(seat4);
-        seat4.setBounds(290, 300, 40, 40);
+        seat4.setBounds(340, 180, 40, 40);
 
         seat5.setText("5");
         seat5.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +118,7 @@ public class AirlineFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(seat5);
-        seat5.setBounds(370, 300, 40, 40);
+        seat5.setBounds(250, 250, 40, 40);
 
         seat6.setText("6");
         seat6.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +127,7 @@ public class AirlineFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(seat6);
-        seat6.setBounds(290, 390, 40, 40);
+        seat6.setBounds(340, 250, 40, 40);
 
         seat7.setText("7");
         seat7.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +136,7 @@ public class AirlineFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(seat7);
-        seat7.setBounds(370, 390, 40, 40);
+        seat7.setBounds(290, 340, 40, 40);
 
         seat8.setText("8");
         seat8.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +145,7 @@ public class AirlineFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(seat8);
-        seat8.setBounds(300, 470, 40, 40);
+        seat8.setBounds(290, 410, 40, 40);
 
         seat9.setText("9");
         seat9.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +154,7 @@ public class AirlineFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(seat9);
-        seat9.setBounds(370, 470, 40, 40);
+        seat9.setBounds(370, 340, 40, 40);
 
         seat10.setText("10");
         seat10.addActionListener(new java.awt.event.ActionListener() {
@@ -160,51 +163,88 @@ public class AirlineFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(seat10);
-        seat10.setBounds(330, 560, 50, 40);
+        seat10.setBounds(370, 410, 50, 40);
+
+        seat11.setText("11");
+        getContentPane().add(seat11);
+        seat11.setBounds(290, 490, 50, 20);
+
+        seat12.setText("12");
+        getContentPane().add(seat12);
+        seat12.setBounds(370, 490, 50, 20);
+
+        seat13.setText("13");
+        seat13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seat13ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(seat13);
+        seat13.setBounds(290, 550, 50, 20);
+
+        seat14.setText("14");
+        getContentPane().add(seat14);
+        seat14.setBounds(360, 550, 48, 23);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/firstclass.png"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(350, 190, 54, 60);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(300, 570, 60, 60);
+        jLabel4.setBounds(340, 420, 60, 60);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/firstclass.png"))); // NOI18N
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(260, 240, 54, 60);
+        jLabel5.setBounds(350, 120, 60, 70);
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 102));
-        jLabel1.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("G4 AIRLINE ");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(200, 10, 270, 60);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/firstclass.png"))); // NOI18N
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(330, 240, 54, 60);
+        jLabel7.setBounds(270, 190, 47, 60);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/firstclass.png"))); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(340, 310, 54, 60);
+        jLabel8.setBounds(270, 260, 54, 60);
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/firstclass.png"))); // NOI18N
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(260, 400, 54, 60);
+        jLabel9.setBounds(350, 260, 47, 60);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(340, 400, 54, 60);
+        jLabel10.setBounds(260, 350, 54, 60);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(270, 480, 54, 60);
+        jLabel11.setBounds(260, 420, 54, 60);
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(340, 480, 54, 60);
+        jLabel12.setBounds(340, 350, 54, 60);
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/firstclass.png"))); // NOI18N
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(270, 170, 60, 60);
+        jLabel13.setBounds(270, 120, 50, 60);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(260, 490, 60, 60);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(340, 490, 60, 60);
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
+        jLabel14.setText("jLabel14");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(270, 560, 60, 60);
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/seat.png"))); // NOI18N
+        jLabel15.setText("jLabel15");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(340, 560, 60, 60);
 
         economyRadioButton.setText("ECONOMY (Seat 6-10)");
         economyRadioButton.addActionListener(new java.awt.event.ActionListener() {
@@ -213,11 +253,11 @@ public class AirlineFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(economyRadioButton);
-        economyRadioButton.setBounds(450, 170, 180, 23);
+        economyRadioButton.setBounds(450, 120, 180, 23);
 
         firtclassRadioButton.setText("FIRST CLASS (Seat 1-5)");
         getContentPane().add(firtclassRadioButton);
-        firtclassRadioButton.setBounds(450, 100, 175, 23);
+        firtclassRadioButton.setBounds(450, 50, 175, 23);
 
         jButton1.setBackground(new java.awt.Color(0, 255, 51));
         jButton1.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
@@ -225,32 +265,21 @@ public class AirlineFrame extends javax.swing.JFrame {
         jButton1.setText("RESERVE ");
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jButton1);
-        jButton1.setBounds(260, 70, 140, 60);
+        jButton1.setBounds(230, 50, 190, 50);
 
         seatCount1.setText("There are ... seats left ");
         getContentPane().add(seatCount1);
-        seatCount1.setBounds(480, 120, 160, 20);
+        seatCount1.setBounds(470, 80, 160, 20);
 
         seatCount2.setText("There are ... seats left ");
         getContentPane().add(seatCount2);
-        seatCount2.setBounds(480, 190, 160, 20);
+        seatCount2.setBounds(470, 150, 160, 20);
 
         seatComment.setText("comment when the seat full");
         getContentPane().add(seatComment);
         seatComment.setBounds(450, 290, 190, 30);
-
-        jTextArea1.setBackground(java.awt.Color.yellow);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("1. Please choose the Class.\n2. Click to pick the Seat.\n3. Press RESERVE to complete.");
-        jScrollPane1.setViewportView(jTextArea1);
-
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(430, 510, 244, 110);
-
-        jTextField1.setText("RESERVATION SUMMARY ");
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(20, 110, 190, 120);
+        jScrollPane1.setBounds(440, 510, 210, 110);
 
         resetButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         resetButton.setForeground(new java.awt.Color(153, 0, 153));
@@ -263,25 +292,45 @@ public class AirlineFrame extends javax.swing.JFrame {
         getContentPane().add(resetButton);
         resetButton.setBounds(30, 579, 110, 40);
 
+        jTextField1.setText("RESERVATION SUMMARY ");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(20, 250, 190, 120);
+
         airplaneFrame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/airlinereservation/airplane.png"))); // NOI18N
         getContentPane().add(airplaneFrame);
-        airplaneFrame.setBounds(0, 90, 680, 560);
+        airplaneFrame.setBounds(0, 50, 650, 620);
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 153));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 102));
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("G4 AIRLINE ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(220, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 620, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 680, 660);
+        jPanel1.setBounds(0, 0, 680, 680);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -334,6 +383,14 @@ public class AirlineFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_resetButtonActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void seat13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seat13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seat13ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -379,19 +436,26 @@ public class AirlineFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton resetButton;
     private javax.swing.JCheckBox seat1;
     private javax.swing.JCheckBox seat10;
+    private javax.swing.JCheckBox seat11;
+    private javax.swing.JCheckBox seat12;
+    private javax.swing.JCheckBox seat13;
+    private javax.swing.JCheckBox seat14;
     private javax.swing.JCheckBox seat2;
     private javax.swing.JCheckBox seat3;
     private javax.swing.JCheckBox seat4;
