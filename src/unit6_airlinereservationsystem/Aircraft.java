@@ -117,7 +117,7 @@ public class Aircraft extends AircraftFactory {
                     break;
                 case "BusinessClass":   _travelClasses.put(TypeOfTravelClass.BUSINESSCLASS, _travelClass);
                     break;
-                case "EconomyClass": this.travelClasses.put(TypeOfTravelClass.ECONOMYCLASS, _travelClass);
+                case "EconomyClass":    _travelClasses.put(TypeOfTravelClass.ECONOMYCLASS, _travelClass);
                     break;
                 default:    
                     throw new IllegalArgumentException("Type of Travel class not valid");
