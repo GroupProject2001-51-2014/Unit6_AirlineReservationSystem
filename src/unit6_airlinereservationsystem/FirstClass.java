@@ -39,7 +39,7 @@ public class FirstClass extends TravelClass {
         if (rowNum < 0 || rowNum > passengerList.size()) {
             throw new IndexOutOfBoundsException("The row# is out of bound");
         }
-        if (column.index() < 0 || rowNum > passengerList.get(0).size()) {
+        if (column.index() < 0 || column.index() > passengerList.get(0).size()) {
             throw new IndexOutOfBoundsException("The column# is out of bound");
         }
         
@@ -61,7 +61,7 @@ public class FirstClass extends TravelClass {
         if (rowNum < 0 || rowNum > passengerList.size()) {
             throw new IndexOutOfBoundsException("The row# is out of bound");
         }
-        if (column.index() < 0 || rowNum > passengerList.get(0).size()) {
+        if (column.index() < 0 || column.index() > passengerList.get(0).size()) {
             throw new IndexOutOfBoundsException("The column# is out of bound");
         }
         
@@ -125,6 +125,11 @@ public class FirstClass extends TravelClass {
         return _rowIterator.get(seat.getSeatColumnIndex() - 1);
     }
 
+    @Override
+    public String toString(){
+        return "First Class";
+    }
+    
     private boolean initialize(int numOfRows, int numOfColumns) {
         if (isInitialized) {
             Iterator<List<Passenger>> rowIterator = passengerList.iterator();
