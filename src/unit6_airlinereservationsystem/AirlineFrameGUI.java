@@ -11,6 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import unit6_airlinereservationsystem.Aircraft.Column;
 
 /**
@@ -47,7 +48,8 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
     List<TravelClass> pList = new ArrayList();
     AircraftFactory cessna = new Aircraft();
     ConcurrentHashMap<Aircraft.TypeOfTravelClass, TravelClass> createdTravelClasses;
-            
+    int capacity;
+    
     /**
      * Creates new form AirlineFrame
      */
@@ -57,6 +59,8 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
         
         firstClass = new FirstClass(3,Column.B);
         economyClass = new EconomyClass(4, Column.B);
+        
+        capacity = 14;
         
         pList.add(firstClass);
         pList.add(economyClass);
@@ -77,13 +81,21 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        resetButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTP_Main = new javax.swing.JTabbedPane();
         jP_Main = new javax.swing.JPanel();
         jLab_Title = new javax.swing.JLabel();
-        jLab_AirFrame = new javax.swing.JLabel();
         jP_AirFrame = new javax.swing.JPanel();
+        jLab_AirFrame = new javax.swing.JLabel();
+        jP_UserInputForm = new javax.swing.JPanel();
+        jLbl_FirstName = new javax.swing.JLabel();
+        jTF_FirstName = new javax.swing.JTextField();
+        jLblLastName = new javax.swing.JLabel();
+        jTF_LastName = new javax.swing.JTextField();
+        jBtn_Submit = new javax.swing.JButton();
+        jBtn_Clear = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTA_Msg = new javax.swing.JTextArea();
         jP_Seats = new javax.swing.JPanel();
         jBtn_FC1 = new javax.swing.JButton();
         jBtn_FC2 = new javax.swing.JButton();
@@ -99,31 +111,41 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
         jBtn_EC6 = new javax.swing.JButton();
         jBtn_EC7 = new javax.swing.JButton();
         jBtn_EC8 = new javax.swing.JButton();
-        jP_UserInputForm = new javax.swing.JPanel();
-        jLbl_FirstName = new javax.swing.JLabel();
-        jTF_FirstName = new javax.swing.JTextField();
-        jLblLastName = new javax.swing.JLabel();
-        jTF_LastName = new javax.swing.JTextField();
-        jBtn_Submit = new javax.swing.JButton();
-        jBtn_Clear = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTA_Msg = new javax.swing.JTextArea();
+        resetButton = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jP_BoardingPass = new javax.swing.JPanel();
+        jLb_BoardingPass = new javax.swing.JLabel();
+        jLbl_bpFirstName = new javax.swing.JLabel();
+        jLbl_bpLastName = new javax.swing.JLabel();
+        jLb_bpSeat = new javax.swing.JLabel();
+        jLb_bpFirstNameAns = new javax.swing.JLabel();
+        jLbl_bpLastNameAns = new javax.swing.JLabel();
+        jLb_bpSeatAns = new javax.swing.JLabel();
         jP_Passengers = new javax.swing.JPanel();
-
-        resetButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        resetButton.setForeground(new java.awt.Color(153, 0, 153));
-        resetButton.setText("RESET");
-        resetButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resetButtonActionPerformed(evt);
-            }
-        });
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTA_PassengerList = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
         setBackground(new java.awt.Color(153, 255, 255));
         setForeground(java.awt.Color.black);
         setPreferredSize(new java.awt.Dimension(675, 710));
+
+        jTP_Main.setName("Passenger List"); // NOI18N
+        jTP_Main.setPreferredSize(new java.awt.Dimension(660, 700));
+        jTP_Main.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTP_MainStateChanged(evt);
+            }
+        });
 
         jP_Main.setBackground(new java.awt.Color(255, 255, 255));
         jP_Main.setToolTipText("");
@@ -134,6 +156,9 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
         jLab_Title.setText("G4 AIRLINES");
         jLab_Title.setToolTipText("");
 
+        jP_AirFrame.setOpaque(false);
+        jP_AirFrame.setPreferredSize(new java.awt.Dimension(660, 610));
+
         jLab_AirFrame.setBackground(new java.awt.Color(255, 255, 255));
         jLab_AirFrame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/airplane.png"))); // NOI18N
         jLab_AirFrame.setToolTipText("");
@@ -142,8 +167,90 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
         jLab_AirFrame.setName(""); // NOI18N
         jLab_AirFrame.setPreferredSize(new java.awt.Dimension(650, 610));
 
-        jP_AirFrame.setOpaque(false);
-        jP_AirFrame.setPreferredSize(new java.awt.Dimension(660, 610));
+        jP_UserInputForm.setOpaque(false);
+
+        jLbl_FirstName.setText("Passenger's First Name:");
+
+        jTF_FirstName.setText("First Name");
+        jTF_FirstName.setToolTipText("Enter Passenger's First Name");
+        jTF_FirstName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTF_FirstNameFocusGained(evt);
+            }
+        });
+
+        jLblLastName.setText("Passenger's Last Name:");
+
+        jTF_LastName.setText("Last Name");
+        jTF_LastName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTF_LastNameFocusGained(evt);
+            }
+        });
+
+        jBtn_Submit.setText("Submit");
+        jBtn_Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtn_SubmitActionPerformed(evt);
+            }
+        });
+
+        jBtn_Clear.setText("Clear");
+        jBtn_Clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtn_ClearActionPerformed(evt);
+            }
+        });
+
+        jScrollPane2.setOpaque(false);
+
+        jTA_Msg.setEditable(false);
+        jTA_Msg.setColumns(20);
+        jTA_Msg.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        jTA_Msg.setRows(5);
+        jTA_Msg.setOpaque(false);
+        jScrollPane2.setViewportView(jTA_Msg);
+
+        javax.swing.GroupLayout jP_UserInputFormLayout = new javax.swing.GroupLayout(jP_UserInputForm);
+        jP_UserInputForm.setLayout(jP_UserInputFormLayout);
+        jP_UserInputFormLayout.setHorizontalGroup(
+            jP_UserInputFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_UserInputFormLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jP_UserInputFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLbl_FirstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTF_FirstName)
+                    .addComponent(jLblLastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jP_UserInputFormLayout.createSequentialGroup()
+                        .addComponent(jBtn_Submit)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtn_Clear)
+                        .addGap(0, 26, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_UserInputFormLayout.createSequentialGroup()
+                        .addComponent(jTF_LastName)
+                        .addGap(4, 4, 4))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jP_UserInputFormLayout.setVerticalGroup(
+            jP_UserInputFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_UserInputFormLayout.createSequentialGroup()
+                .addGap(142, 142, 142)
+                .addComponent(jLbl_FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTF_FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTF_LastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jP_UserInputFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtn_Submit)
+                    .addComponent(jBtn_Clear))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
+        );
 
         jP_Seats.setMaximumSize(new java.awt.Dimension(65, 550));
         jP_Seats.setName(""); // NOI18N
@@ -272,6 +379,15 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
             }
         });
 
+        resetButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        resetButton.setForeground(new java.awt.Color(153, 0, 153));
+        resetButton.setText("RESET");
+        resetButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jP_SeatsLayout = new javax.swing.GroupLayout(jP_Seats);
         jP_Seats.setLayout(jP_SeatsLayout);
         jP_SeatsLayout.setHorizontalGroup(
@@ -306,7 +422,13 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
                             .addComponent(jBtn_FC3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jBtn_FC1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jBtn_FC2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jBtn_FC2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator3)
+                    .addGroup(jP_SeatsLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(resetButton))
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         jP_SeatsLayout.setVerticalGroup(
@@ -321,9 +443,15 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
                     .addComponent(jBtn_FC4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(8, 8, 8)
                 .addGroup(jP_SeatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jBtn_FC6, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtn_FC5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(57, 57, 57)
+                    .addComponent(jBtn_FC5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtn_FC6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(resetButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jP_SeatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jBtn_EC2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBtn_EC1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
@@ -339,113 +467,105 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
                 .addGroup(jP_SeatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jBtn_EC7, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBtn_EC8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(0, 56, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        jP_UserInputForm.setOpaque(false);
+        jP_BoardingPass.setOpaque(false);
 
-        jLbl_FirstName.setText("Passenger's First Name:");
+        jLb_BoardingPass.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLb_BoardingPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLb_BoardingPass.setText("BOADING PASS");
+        jLb_BoardingPass.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jTF_FirstName.setText("First Name");
-        jTF_FirstName.setToolTipText("Enter Passenger's First Name");
-        jTF_FirstName.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTF_FirstNameFocusGained(evt);
-            }
-        });
+        jLbl_bpFirstName.setText("FIRST NAME:");
 
-        jLblLastName.setText("Passenger's Last Name:");
+        jLbl_bpLastName.setText("LAST NAME:");
+        jLbl_bpLastName.setToolTipText("");
 
-        jTF_LastName.setText("Last Name");
-        jTF_LastName.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTF_LastNameFocusGained(evt);
-            }
-        });
+        jLb_bpSeat.setText("SEAT:");
 
-        jBtn_Submit.setText("Submit");
-        jBtn_Submit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtn_SubmitActionPerformed(evt);
-            }
-        });
-
-        jBtn_Clear.setText("Clear");
-        jBtn_Clear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtn_ClearActionPerformed(evt);
-            }
-        });
-
-        jScrollPane2.setOpaque(false);
-
-        jTA_Msg.setEditable(false);
-        jTA_Msg.setColumns(20);
-        jTA_Msg.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        jTA_Msg.setRows(5);
-        jTA_Msg.setOpaque(false);
-        jScrollPane2.setViewportView(jTA_Msg);
-
-        javax.swing.GroupLayout jP_UserInputFormLayout = new javax.swing.GroupLayout(jP_UserInputForm);
-        jP_UserInputForm.setLayout(jP_UserInputFormLayout);
-        jP_UserInputFormLayout.setHorizontalGroup(
-            jP_UserInputFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jP_UserInputFormLayout.createSequentialGroup()
+        javax.swing.GroupLayout jP_BoardingPassLayout = new javax.swing.GroupLayout(jP_BoardingPass);
+        jP_BoardingPass.setLayout(jP_BoardingPassLayout);
+        jP_BoardingPassLayout.setHorizontalGroup(
+            jP_BoardingPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_BoardingPassLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jP_UserInputFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLbl_FirstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTF_FirstName)
-                    .addComponent(jLblLastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jP_UserInputFormLayout.createSequentialGroup()
-                        .addComponent(jBtn_Submit)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBtn_Clear)
-                        .addGap(0, 50, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_UserInputFormLayout.createSequentialGroup()
-                        .addComponent(jTF_LastName)
-                        .addGap(4, 4, 4))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGroup(jP_BoardingPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLb_BoardingPass, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                    .addGroup(jP_BoardingPassLayout.createSequentialGroup()
+                        .addGroup(jP_BoardingPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLbl_bpLastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLbl_bpFirstName, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                            .addComponent(jLb_bpSeat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jP_BoardingPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLb_bpFirstNameAns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLbl_bpLastNameAns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLb_bpSeatAns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
-        jP_UserInputFormLayout.setVerticalGroup(
-            jP_UserInputFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jP_UserInputFormLayout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(jLbl_FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jP_BoardingPassLayout.setVerticalGroup(
+            jP_BoardingPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_BoardingPassLayout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(jLb_BoardingPass)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTF_FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jP_BoardingPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLbl_bpFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLb_bpFirstNameAns, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jP_BoardingPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLbl_bpLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLbl_bpLastNameAns, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTF_LastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jP_UserInputFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtn_Submit)
-                    .addComponent(jBtn_Clear))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
+                .addGroup(jP_BoardingPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLb_bpSeat, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLb_bpSeatAns, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(307, Short.MAX_VALUE))
         );
+
+        jLbl_bpLastName.getAccessibleContext().setAccessibleName("LAST NAME:");
+        jLbl_bpLastName.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout jP_AirFrameLayout = new javax.swing.GroupLayout(jP_AirFrame);
         jP_AirFrame.setLayout(jP_AirFrameLayout);
         jP_AirFrameLayout.setHorizontalGroup(
             jP_AirFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jP_AirFrameLayout.createSequentialGroup()
-                .addGap(245, 245, 245)
-                .addComponent(jP_Seats, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jP_UserInputForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jP_BoardingPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jP_AirFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jP_AirFrameLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jP_Seats, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jP_AirFrameLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(jP_UserInputForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
+            .addGroup(jP_AirFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLab_AirFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jP_AirFrameLayout.setVerticalGroup(
             jP_AirFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jP_AirFrameLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jP_Seats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
-            .addGroup(jP_AirFrameLayout.createSequentialGroup()
-                .addComponent(jP_UserInputForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addGroup(jP_AirFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_AirFrameLayout.createSequentialGroup()
+                        .addGroup(jP_AirFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jP_BoardingPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jP_AirFrameLayout.createSequentialGroup()
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jP_Seats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_AirFrameLayout.createSequentialGroup()
+                        .addComponent(jP_UserInputForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))))
+            .addGroup(jP_AirFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLab_AirFrame, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jP_MainLayout = new javax.swing.GroupLayout(jP_Main);
@@ -454,44 +574,78 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
             jP_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_MainLayout.createSequentialGroup()
                 .addComponent(jP_AirFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_MainLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLab_Title)
                 .addGap(217, 217, 217))
-            .addGroup(jP_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jP_MainLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLab_AirFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(1, 1, 1)))
         );
         jP_MainLayout.setVerticalGroup(
             jP_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jP_MainLayout.createSequentialGroup()
                 .addComponent(jLab_Title, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jP_AirFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jP_AirFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jP_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jP_MainLayout.createSequentialGroup()
-                    .addGap(46, 46, 46)
-                    .addComponent(jLab_AirFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(31, Short.MAX_VALUE)))
         );
 
         jTP_Main.addTab("Reservation", jP_Main);
 
         jP_Passengers.setOpaque(false);
 
+        jTA_PassengerList.setEditable(false);
+        jTA_PassengerList.setColumns(20);
+        jTA_PassengerList.setRows(5);
+        jScrollPane3.setViewportView(jTA_PassengerList);
+
+        jLabel1.setFont(new java.awt.Font("GentiumAlt", 0, 48)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("PASSENGER LIST:");
+
+        jLabel2.setText("SEAT");
+
+        jLabel3.setText("First Name");
+
+        jLabel4.setText("Travel Class");
+
+        jLabel5.setText("Last Name");
+
         javax.swing.GroupLayout jP_PassengersLayout = new javax.swing.GroupLayout(jP_Passengers);
         jP_Passengers.setLayout(jP_PassengersLayout);
         jP_PassengersLayout.setHorizontalGroup(
             jP_PassengersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 661, Short.MAX_VALUE)
+            .addGroup(jP_PassengersLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addGroup(jP_PassengersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jP_PassengersLayout.createSequentialGroup()
+                        .addGroup(jP_PassengersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(47, Short.MAX_VALUE))
+                    .addGroup(jP_PassengersLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel5)
+                        .addGap(93, 93, 93))))
         );
         jP_PassengersLayout.setVerticalGroup(
             jP_PassengersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 676, Short.MAX_VALUE)
+            .addGroup(jP_PassengersLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jP_PassengersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTP_Main.addTab("Passenger List", jP_Passengers);
@@ -502,7 +656,8 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new AirlineFrameGUI();
     }//GEN-LAST:event_resetButtonActionPerformed
 
     private void selectedButtonSetColor(JButton selectedButton){
@@ -580,8 +735,10 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtn_EC8ActionPerformed
 
     private void jBtn_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_SubmitActionPerformed
+        StringBuilder _passengerList = new StringBuilder();
         JButton _selectedButton = this.currentButtonSelected;
         TravelClass _travelClass;
+        String _travelClassName;
         SeatColorCode _sc;
         Seat _seat;
         String _firstName;
@@ -589,8 +746,17 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
         int _row;
         Column _column;
         
+        this.jLb_bpFirstNameAns.setText("");
+        this.jLbl_bpLastNameAns.setText("");
+        this.jLb_bpSeatAns.setText("");
+        
         if (this.currentButtonSelected == null) {
             this.jTA_Msg.setText("No Seat Selected\nSelect a seat");
+            return;
+        }
+        
+        if (this.capacity < 1 ) {
+            this.jTA_Msg.setText("Sorry, the Plane is full!\nNext flight leaves in 3 hours\nPlease wait!");
             return;
         }
         
@@ -600,9 +766,10 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
         _lastName = this.jTF_LastName.getText();
         _row = _seat.getSeatRow();
         _column = _seat.getSeatColumn();
-        
+        _travelClassName =  _seat.getSeatClass().toString();
+
         if (_sc.getColor() == Color.RED) {
-            this.jTA_Msg.setText(String.format("That Seat is Taken%nSeat Row#:%d Column: %s%nSelect Another seat", _row, _column));
+            this.jTA_Msg.setText(String.format("That Seat is Taken:%nClass: %s%nSeat Row#:%d Column: %s%nSelect Another seat", _travelClassName,_row, _column));
             return;
         }
         
@@ -610,12 +777,30 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
             _travelClass = (FirstClass) createdTravelClasses.get(Aircraft.TypeOfTravelClass.FIRSTCLASS);
             _travelClass.placeResearvation(_row,_column, new Passenger(_firstName, _lastName));
             _sc.setColor(Color.RED);
+            this.capacity--;
+            
+            this.jLb_bpFirstNameAns.setText(_firstName);
+            this.jLbl_bpLastNameAns.setText(_lastName);
+            this.jLb_bpSeatAns.setText(String.format("%s %d%s", _travelClassName, _row, _column));
+            
+            _passengerList.append(this.jTA_PassengerList.getText());
+            _passengerList.append(String.format("%-20s \t%d%-5s \t%-30s \t%s%n", _travelClassName, _row, _column, _firstName, _lastName));
+            this.jTA_PassengerList.setText(_passengerList.toString());
         }
         
         if( _seat.getSeatClass() instanceof EconomyClass){
             _travelClass = (EconomyClass) createdTravelClasses.get(Aircraft.TypeOfTravelClass.ECONOMYCLASS);
             _travelClass.placeResearvation(_row,_column, new Passenger(_firstName, _lastName));
             _sc.setColor(Color.RED);
+            this.capacity--;
+            
+            this.jLb_bpFirstNameAns.setText(_firstName);
+            this.jLbl_bpLastNameAns.setText(_lastName);
+            this.jLb_bpSeatAns.setText(String.format("%s %d%s", _travelClassName, _row+3, _column));
+            
+            _passengerList.append(this.jTA_PassengerList.getText());
+            _passengerList.append(String.format("%-20s \t%d%-5s \t%-30s \t%s%n", _travelClassName, _row+3, _column, _firstName, _lastName));
+            this.jTA_PassengerList.setText(_passengerList.toString());
         }        
     }//GEN-LAST:event_jBtn_SubmitActionPerformed
 
@@ -631,6 +816,14 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
     private void jTF_LastNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTF_LastNameFocusGained
         this.jTF_LastName.setText("");
     }//GEN-LAST:event_jTF_LastNameFocusGained
+
+    private void jTP_MainStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTP_MainStateChanged
+       JTabbedPane _TabbedPane = (JTabbedPane) evt.getSource();
+       StringBuilder _PassengerList = new StringBuilder();
+        if (_TabbedPane.getSelectedIndex() == 1 && this.createdTravelClasses != null) {
+            //TODO: Secondary approach using iterator
+        }
+    }//GEN-LAST:event_jTP_MainStateChanged
 
     /**
      * @param args the command line arguments
@@ -672,7 +865,7 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
           
         this.setTitle("G4 Airline Reservation");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(660, 680);           // Size the JFrame to a known size configuration
+        this.setSize(675, 700);           // Size the JFrame to a known size configuration
         this.setLocationRelativeTo(null); // Brings the window to the Center of the screen
         this.setVisible(true);            // Vital allow visibility of the JFrame NB: JFrame.show() is deprecated 
     }
@@ -720,16 +913,35 @@ public class AirlineFrameGUI extends javax.swing.JFrame {
     private javax.swing.JButton jBtn_Submit;
     private javax.swing.JLabel jLab_AirFrame;
     private javax.swing.JLabel jLab_Title;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLb_BoardingPass;
+    private javax.swing.JLabel jLb_bpFirstNameAns;
+    private javax.swing.JLabel jLb_bpSeat;
+    private javax.swing.JLabel jLb_bpSeatAns;
     private javax.swing.JLabel jLblLastName;
     private javax.swing.JLabel jLbl_FirstName;
+    private javax.swing.JLabel jLbl_bpFirstName;
+    private javax.swing.JLabel jLbl_bpLastName;
+    private javax.swing.JLabel jLbl_bpLastNameAns;
     private javax.swing.JPanel jP_AirFrame;
+    private javax.swing.JPanel jP_BoardingPass;
     private javax.swing.JPanel jP_Main;
     private javax.swing.JPanel jP_Passengers;
     private javax.swing.JPanel jP_Seats;
     private javax.swing.JPanel jP_UserInputForm;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTextArea jTA_Msg;
+    private javax.swing.JTextArea jTA_PassengerList;
     private javax.swing.JTextField jTF_FirstName;
     private javax.swing.JTextField jTF_LastName;
     private javax.swing.JTabbedPane jTP_Main;
