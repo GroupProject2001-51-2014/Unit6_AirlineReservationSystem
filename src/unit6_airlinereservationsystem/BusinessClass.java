@@ -127,7 +127,7 @@ public class BusinessClass extends TravelClass {
     
     @Override
     public String toString() {
-        return this.getClass().toString();
+        return "Business Class";
     }
 
     private boolean initialize(int numOfRows, int numOfColumns) {
