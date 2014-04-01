@@ -120,7 +120,7 @@ public class EconomyClass extends TravelClass{
     
     @Override
     public String toString() {
-        return this.getClass().toString();
+        return "Economy Class";
     }
 
     private boolean initialize(int numOfRows, int numOfColumns) {
