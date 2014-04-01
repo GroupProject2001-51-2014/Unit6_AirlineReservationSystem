@@ -93,16 +93,16 @@ public class Unit6_AirlineReservationSystem {
      */
     public static void main(String[] args) {
         
-        final boolean DEBUG = true;
+        final boolean DEBUG = false;
         
         if (DEBUG) {
             //Test code
         
-            // FirstClass fc = new FirstClass(5, Column.F); // TODO: Enable when FirstClass is develped
+            FirstClass fc = new FirstClass(5, Column.F);
             BusinessClass bc = new BusinessClass(3, Column.D);
 
             List<TravelClass> pList = new ArrayList();
-            //tc.add(fc); // TODO: Enable when FirstClass is develped
+            pList.add(fc);
             pList.add(bc);
 
             AircraftFactory cessna = new Aircraft();
@@ -115,11 +115,8 @@ public class Unit6_AirlineReservationSystem {
             abc.placeResearvation(2,Column.C, new Passenger("Jim", "Frost"));
             abc.placeResearvation(2,Column.D, new Passenger("Jim", "Warm"));
 
-            /* 
-            TODO: Enable block when FirstClass is develped
             afc.placeResearvation(1,Column.A, new Passenger("Jane", "Frost"));
             afc.placeResearvation(2,Column.C, new Passenger("Jane", "Warm"));
-            */
 
             Seat aResearvedSeat_1 = abc.getResearvedSeat(new Passenger("Jack", "Frost"));
             Seat aResearvedSeat_2 = abc.getResearvedSeat(new Passenger("Jack", "Warm"));
@@ -129,8 +126,19 @@ public class Unit6_AirlineReservationSystem {
               
         }
         
-        // TODO: Place production code here
-
+        /**
+         * Running the GUI
+         */
+        AirlineFrameGUI ui = null;
+        try{
+            ui = new AirlineFrameGUI();
+        }
+        catch(Exception ex){
+            if(ui == null){
+            } else {
+                ui.dispose();
+            }
+        }
     }
     
 }
